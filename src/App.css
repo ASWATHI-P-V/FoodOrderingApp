@@ -2,37 +2,127 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* General body styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Parent container for the section */
+.section-container1 {
+  position: relative;
+  height: 100vh; /* Full screen height */
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  overflow: hidden;
+  color: rgb(250, 246, 246);
+  background-color: rgba(0, 0, 0, 0.7); /* Add slight transparency */
 }
 
-.App-link {
-  color: #61dafb;
+/* Background image */
+.background-image1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/home/aswathi/Documents/workspace/Food_ordering/food-ordering-app/public/images/back_ground.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Send the background behind the content */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Content container */
+.content1 {
+  position: relative;
+  color: #fcf8f8; /* Text color */
+  z-index: 1; /* Ensure content appears above the background */
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px); /* Initial position for animation */
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Heading with animation */
+.animated-heading {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: flyInFromLeft 1.5s ease forwards;
+}
+
+/* Paragraph with animation */
+.animated-paragraph {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  animation: flyInFromRight 1.5s ease forwards;
+}
+
+/* Hover effect to enlarge contents */
+.animated-heading:hover, 
+.animated-paragraph:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Button styles */
+.button1 {
+  margin-top: 20px;
+}
+
+.enroll-button1 {
+  animation: bounceIn 1.8s ease-in-out;
+  background-color: #ff9800 !important; /* Button color */
+  color: white !important;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  transform: translateY(50px);
+  animation: flyInFromBottom 1.5s ease forwards 2s; /* Delay for button to fly in */
+}
+
+/* Fly-in keyframes */
+@keyframes flyInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flyInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flyInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in and slide-up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -1,0 +1,136 @@
+/* Container with gradient background */
+.section22-container {
+    padding: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgb(245, 193, 96), rgb(247, 156, 95)); /* Gradient for the section background */
+  }
+  
+  /* Main content container with opacity and shadow */
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.979); /* Semi-transparent background for blending */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deep shadow for depth */
+   
+    border-radius: 15px; /* Rounded corners for a smooth look */
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .content:hover {
+    transform: scale(1.02); /* Slight scale-up on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+  }
+  
+  /* Left side text section */
+  .text-section {
+    flex-basis: 50%;
+    padding-right: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 1s ease-out; /* Animation for entry */
+  }
+  
+  .text-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(255, 255, 255)); /* Gradient border */
+    border-radius: 10px 0 0 10px; /* Rounded edges for the left border */
+  }
+  
+  .text-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: black;
+    
+  }
+  
+  .text-section p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .text-section p:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  
+  /* Right side video section */
+  .video-section {
+    flex-basis: 50%;
+    position: relative;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* Blend video container with the background */
+    border-radius: 10px;
+  }
+  
+  .video-section iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .video-section iframe:hover {
+    transform: scale(1.05); /* Video enlarges on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow effect for the video */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .text-section, .video-section {
+      flex-basis: 100%;
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .video-section iframe {
+      height: 250px;
+    }
+  }
+  
+  /* Text glow animation */
+  @keyframes textGlow {
+    from {
+      text-shadow: 0 0 10px rgba(92, 30, 30, 0.466), 0 0 20px rgba(240, 100, 100, 0.7);
+    }
+    to {
+      text-shadow: 0 0 20px rgb(32, 4, 4), 0 0 30px rgba(240, 100, 100, 1);
+    }
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

@@ -1,0 +1,71 @@
+.menu-container {
+  padding: 20px;
+  text-align: center;
+  color: #333;  /* Set default font color */
+  font-size: 16px;  
+}
+
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.menu-item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 15px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.menu-item h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.menu-item p {
+  margin: 10px 0;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+.quantity-selector {
+  margin: 10px 0;
+}
+
+.quantity-selector input {
+  width: 50px;
+  padding: 5px;
+}
+
+.menu-item-image {
+  width: 200px; /* Set desired width for the card */
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.menu-item-image:hover {
+  transform: scale(1.1); /* Increase the size by 10% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a shadow effect */
+}
+.menu-item:hover {
+  transform: scale(1.1); /* Increase the size by 10% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a shadow effect */
+}

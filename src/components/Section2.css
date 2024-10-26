@@ -1,0 +1,126 @@
+.section2-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.section2-background {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.image-container {
+  flex: 1;
+  max-width: 600px;
+  animation: slideInLeft 1.5s ease-in-out;
+}
+
+.animated-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.animated-image:hover {
+  transform: scale(1.05);
+}
+
+.text-container {
+  flex: 1;
+  padding-left: 40px;
+  animation: slideInRight 1.5s ease-in-out;
+  max-width: 600px;
+}
+
+.animated-text {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeInUp 2s forwards;
+  transition: color 0.3s ease;
+}
+
+.animated-text:hover {
+  color: #ff6347;
+}
+
+/* Keyframes for animations */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .section2-background {
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center;
+  }
+
+  .text-container {
+    padding-left: 0;
+    text-align: center;
+    padding-top: 20px; /* Add some spacing between the image and text */
+  }
+
+  .animated-text {
+    font-size: 1.5rem; /* Reduce font size on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-text {
+    font-size: 1.2rem; /* Further reduce font size for mobile devices */
+  }
+
+  .image-container {
+    max-width: 100%; /* Ensure image takes full width */
+  }
+
+  .text-container {
+    max-width: 100%;
+  }
+
+  .section2-container {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
